@@ -71,7 +71,6 @@ async function join() {
     const conn = peer.connect(connectto[1], { reliable: true });
     conn.on('open', () => {
         connectedTo = conn;
-        conn.send('Hello!');
         goLive();
         conn.on('data', (data) => {
         if (data === 'callme') peer.call(connectto[1], null);
