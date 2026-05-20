@@ -1,12 +1,12 @@
 const connectto = /[&?]connectto=([^&]+)/.exec(location.search);
 const isHosting = connectto === null;
 
-const landing = document.getElementById('landing');
+const mainpg = document.getElementById('mainpg');
 const btnGroup = document.getElementById('btnGroup');
 const status = document.getElementById('status');
 
 function goLive() {
-    landing.classList.add('hidden');
+    mainpg.classList.add('hidden');
     const vid = document.getElementById('switchview');
     vid.classList.add('active');
 }
