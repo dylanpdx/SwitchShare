@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stream</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="mainpg">
+      <div id="btnGroup"></div>
+      <small id="status"></small>
+    </div>
+    <video id="switchview" autoplay playsinline></video>
+    <script type="module">
+      import { SwiCCSink } from './SwiCCSink.js';
+      import { ControllerState } from './ControllerState.js';
+      window.SwiCCSink = SwiCCSink;
+      window.ControllerState = ControllerState;
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.5.5/peerjs.min.js" integrity="sha512-XEKeWX+mI3Ov+tg2evDlVQFzVOIp4T8J3cNcCEPaEUGpxJV3eZaN8rHuvnFPvQpGJBHPmrozJDMpm2xcDvtmyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
