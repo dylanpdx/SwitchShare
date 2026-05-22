@@ -60,6 +60,13 @@ async function host() {
     await sink.connect();
     try {
         myStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: { width: 1920, height: 1080 } });
+        const vid = document.getElementById('switchview');
+        vid.srcObject = myStream;
+        vid.play();
+        vid.classList.add('active');
+        document.getElementById('btnGroup').style.display = 'none';
+        mainpg.classList.remove('hidden');
+        mainpg.style.cssText = 'position:fixed;bottom:8px;left:0;right:0;height:auto;display:block;text-align:center;z-index:10;';
         status.textContent = `http://${location.host}/?connectto=${myPeerId}`;
     } catch (err) {
         status.textContent = err.message;
