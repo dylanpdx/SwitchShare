@@ -59,7 +59,7 @@ async function host() {
     sink = new SwiCCSink();
     await sink.connect();
     try {
-        myStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: { width: 1920, height: 1080 } });
+        myStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: { width: 1280, height: 720, frameRate: 30 } });
         const vid = document.getElementById('switchview');
         vid.srcObject = myStream;
         vid.play();
