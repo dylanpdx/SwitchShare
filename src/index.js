@@ -88,7 +88,7 @@ async function join() {
 
 function controllerLoop() {
     const gpads = navigator.getGamepads();
-    if (gpads?.length > 0) {
+    if (gpads?.length > 0 && gpads[0] !== null) {
         const pad = gpads[0];
         if (lastControllerTs !== pad.timestamp) {
         lastControllerTs = pad.timestamp;
